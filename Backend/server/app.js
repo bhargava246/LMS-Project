@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
+import express from 'express';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 const app = express();
 
 app.use(express.json());
@@ -17,7 +17,7 @@ app.use('/ping' ,function(req,res){
 });
 
 app.use('*',(req,res) => {
-    res.status(404),send('OOPS!! 404 page not found');
+    res.status(404),res.send('OOPS!! 404 page not found');
 });
 
-module.exports = app;
+export default app;
